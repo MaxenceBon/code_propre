@@ -1,18 +1,18 @@
 package ex2;
 
 /** Représente un compte bancaire de type compte courante (type=CC) ou livret A (type=LA)
- * @author DIGINAMIC
+ * @author Maxence
  */
 public class CompteBancaire {
 
-	/** solde : solde du compte */
+	/** solde du compte */
 	protected double solde;
 	
-	/** decouvert : un découvert est autorisé seulement pour les comptes courants */
+	/** découvert autorisé pour les comptes courants */
 	private double decouvert;
 	
 	
-	/** Le type vaut soit CC=Compte courant, ou soit LA=Livret A */
+	/** type du compte, "compteCourant" ou "livretA" */
 	private String type;
 	
 	/**
@@ -39,12 +39,12 @@ public class CompteBancaire {
 	 * @param montant
 	 */
 	public void debiterMontant(double montant){
-		if (type.equals("CC")){
+		if (type.equals("compteCourant")){
 			if (this.solde - montant > decouvert){
 				this.solde = solde - montant;
 			}	
 		}
-		else if (type.equals("LA")){
+		else if (type.equals("livretA")){
 			if (this.solde - montant > 0){
 				this.solde = solde - montant;
 			}	
@@ -52,7 +52,7 @@ public class CompteBancaire {
 	}
 	
 	/** Getter for solde
-	 * @return the solde
+	 * @return le solde
 	 */
 	public double getSolde() {
 		return solde;
@@ -65,26 +65,26 @@ public class CompteBancaire {
 		this.solde = solde;
 	}
 	/** Getter for decouvert
-	 * @return the decouvert
+	 * @return le decouvert
 	 */
 	public double getDecouvert() {
 		return decouvert;
 	}
 	/** Setter
-	 * @param decouvert the decouvert to set
+	 * @param decouvert le decouvert to set
 	 */
 	public void setDecouvert(double decouvert) {
 		this.decouvert = decouvert;
 	}
 
 	/** Getter for type
-	 * @return the type
+	 * @return le type
 	 */
 	public String getType() {
 		return type;
 	}
 	/** Setter
-	 * @param type the type to set
+	 * @param type le type to set
 	 */
 	public void setType(String type) {
 		this.type = type;

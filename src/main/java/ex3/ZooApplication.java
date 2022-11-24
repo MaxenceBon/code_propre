@@ -3,9 +3,17 @@ package ex3;
 
 public class ZooApplication {
 
+
 	public static void main(String[] args) {
+		
+		/**
+		 * Creation d'un nouveau zoo
+		 */
 		Zoo zoo = new Zoo("Thoiry");
 		
+		/**
+		 * Ajout de différents animaux, avec leur nom, leur type et leur comportement
+		 */
 		zoo.addAnimal("Gazelle", "MAMMIFERE", "HERBIVORE");
 		zoo.addAnimal("Zèbre", "MAMIFERE", "HERBIVORE");
 		zoo.addAnimal("Lion", "MAMMIFERE", "HERBIVORE");
@@ -15,6 +23,9 @@ public class ZooApplication {
 		zoo.addAnimal("Boa constrictor", "SERPENT", "CARNIVORE");
 		zoo.addAnimal("Python", "SERPENT", "CARNIVORE");
 		
+		/**
+		 * Affichage de la liste des animaux
+		 */
 		zoo.afficherListeAnimaux();
 
 		System.out.println(zoo.taille());
